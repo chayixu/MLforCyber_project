@@ -1,9 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[3]:
-
-
 from PIL import Image
 import h5py
 import numpy as np
@@ -11,17 +8,9 @@ import keras
 import cv2
 import sys
 
-
-# In[14]:
-
-
 test_image_filename = str(sys.argv[1])
 clean_data_filename = str(sys.argv[2])
 model_filename = str(sys.argv[3])
-
-
-# In[9]:
-
 
 def data_loader(filepath):
     data = h5py.File(filepath, 'r')
@@ -30,20 +19,12 @@ def data_loader(filepath):
     x_data = x_data.transpose((0,2,3,1))
     return x_data, y_data
 
-
-# In[10]:
-
-
 def image_add(x, x_clean, alpha, num=10):
     pert_ind = np.random.randint(x_clean.shape[0],size=num)
     output = np.zeros((num,x.shape[0],x.shape[1],x.shape[2]))
     for i in range(num):
         output[i] = cv2.addWeighted(x, alpha, x_clean[pert_ind[i]], 1-alpha,0)
     return output
-
-
-# In[63]:
-
 
 def main():
     x_clean, y_clean = data_loader(clean_data_filename)
@@ -62,16 +43,5 @@ def main():
         output_label = np.argmax(bd_model(test_image[np.newaxis, :]))
     print('Predicted label: ',output_label)
 
-
-# In[64]:
-
-
 if __name__ == '__main__':
     main()
-
-
-# In[ ]:
-
-
-
-
