@@ -1,17 +1,4 @@
-# CSAW-HackML-2020
-
-```bash
-├── data 
-    └── clean_validation_data.h5 // this is clean data used to evaluate the BadNet and design the backdoor defense
-    └── clean_test_data.h5
-    └── sunglasses_poisoned_data.h5
-├── models
-    └── anonymous_bd_net.h5
-    └── anonymous_bd_weights.h5
-    └── sunglasses_bd_net.h5
-    └── sunglasses_bd_weights.h5
-├── architecture.py
-└── eval.py // this is the evaluation script
+#add lamda-layer pruning method (Kenan Xu)
 ```
 
 ## I. Dependencies
