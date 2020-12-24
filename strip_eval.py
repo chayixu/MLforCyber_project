@@ -26,6 +26,19 @@ def data_loader(filepath):
     return x_data, y_data
 
 def image_add(x, x_clean, alpha, num=10):
+'''
+Perturbation method. Image linear blend is used in this project.
+
+parameters:
+x: input image                                  (h, w, 3)
+x_clean: clean validation dataset               (num, h, w, 3)
+alpha: the rate of input image is 
+       in the superimposed image                const
+num: number of perturbations                    const, default 10
+
+retunr:
+output: perturbated image set                   (num, h, w, 3)                                    
+'''
     pert_ind = np.random.randint(x_clean.shape[0],size=num)
     output = np.zeros((num,x.shape[0],x.shape[1],x.shape[2]))
     for i in range(num):
@@ -33,6 +46,23 @@ def image_add(x, x_clean, alpha, num=10):
     return output
 
 def STRIP(x_test, x_clean, bd_model, decision_boundary, num_perturbation):
+'''
+STRIP detection.
+
+parameters:
+x_test: test image set                          (N_t, h, w, 3)
+x_clean: clean validation dataset               (N_v, h, w, 3)
+bd_model: badnet
+decision_boundary: entropy decision boundary
+num_perturbation: number of perturbations       const
+
+return:
+H_test: list of each test image's entropy       (N_t,)
+false_rejection_rate: if test set is clean
+                      it is its FRR;
+                      if test set is poisoned
+                      its FAR is 1-false_rejection_rate.
+'''
     clean_cnt = 0
     H_test = []
     for i in tqdm(range(x_test.shape[0])):
