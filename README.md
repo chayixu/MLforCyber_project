@@ -16,7 +16,7 @@ Here are the evaluation results of different types models with the same clean te
 |multi trigger multi target bd net(sunglasses)|5.61%|0.00%|
 
 ### Dependencies
-1. Python 3.5.8
+1. Python 3.8.5
 2. Keras 2.4.3
 3. Numpy 1.19.2
 4. Matplotlib 3.3.2
