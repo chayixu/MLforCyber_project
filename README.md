@@ -26,9 +26,9 @@ Here are the evaluation results
 |---|---|---|
 |sunglasses bad net model|10.3%|1.9%|
 |anonymous_1 bad net model|7.7%|7.8%|
-|multi_trigger bad net model|7.8%|17.9%(eyebrows)|
-|multi_trigger bad net model|7.8%|0.3%(lipstick)|
-|multi_trigger bad net model|7.8%|0%(sunglasses)|
+|multi_trigger bad net model|7.8%|17.8%(eyebrows)|
+|multi_trigger bad net model|7.8%|7.2%(lipstick)|
+|multi_trigger bad net model|7.8%|0.07%(sunglasses)|
 
 ## Dependencies
 1. Python 3.5.8
