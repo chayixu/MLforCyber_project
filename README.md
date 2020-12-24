@@ -48,7 +48,7 @@ Here are the evaluation results
 Using `eval_sunglasses_fineprune.py`, `eval_multi_trigger_fineprune.py`, `eval_anonymous_1_fineprune.py`, `eval_anonymous_2_fineprune.py` to evaluate input images. Support both `‘.h5’` data or single image as input.    
 **BEFORE RUNNING**  
 Make sure call_filter.py is under the same file path.    
-**Run with**  
+Run with 
 `Python3 <eval.py for corresponding model> <path/input filename>`  
 For example:  
 `Python3 eval_sunglasses_fineprune.py test_images/clean_test1.png`  
